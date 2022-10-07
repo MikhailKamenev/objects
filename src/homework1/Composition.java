@@ -1,5 +1,7 @@
 package homework1;
 
+import java.util.Objects;
+
 public class Composition {
     private String name;
     Author author;
@@ -21,5 +23,27 @@ public class Composition {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Composition {" + name +
+                ", author - " + author.toString() +
+                ", year - " + year +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+        Composition that = (Composition) other;
+        return name.equals(that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), author, getYear());
     }
 }
