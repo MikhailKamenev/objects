@@ -11,10 +11,10 @@ public class Homework1 {
         Composition warseThanPrevious = worseThanPrevious; // сделал для проверки переопределенного метода equals
 
         System.out.println("Имя творца шедевра под названием '"+notInteresting.getName()+"' - "
-                + notInteresting.author.getFirstName() +" "+ notInteresting.author.getFamilyName()+"." +
+                + notInteresting.getAuthor().getFirstName() +" "+ notInteresting.getAuthor().getFamilyName()+"." +
                 " Год издания - "+notInteresting.getYear()+".");
         System.out.println("Имя творца шедевра под названием '"+worseThanPrevious.getName()+"' - "
-                +worseThanPrevious.author.getFirstName()+" "+worseThanPrevious.author.getFamilyName()+"." +
+                +worseThanPrevious.getAuthor().getFirstName()+" "+worseThanPrevious.getAuthor().getFamilyName()+"." +
                 " Год издания - "+worseThanPrevious.getYear()+".");
         System.out.println(notInteresting.toString());
         System.out.println(worseThanPrevious.toString());

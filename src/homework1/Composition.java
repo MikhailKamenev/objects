@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Composition {
     private String name;
-    Author author;
+    private Author author;
     private int year;
 
     public Composition(String name, Author author, int year) {
@@ -21,6 +21,10 @@ public class Composition {
         return year;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
+
     public void setYear(int year) {
         this.year = year;
     }
@@ -34,12 +38,11 @@ public class Composition {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        Composition that = (Composition) other;
-        return name.equals(that.name);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Composition that = (Composition) o;
+        return getYear() == that.getYear() && Objects.equals(getName(), that.getName()) && Objects.equals(getAuthor(), that.getAuthor());
     }
 
     @Override
